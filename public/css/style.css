@@ -24,16 +24,35 @@ h2 {
   font-weight: 600; }
 
 .form-group .btn {
-  font-size: 14px; }
+  font-size: 14px;
+  width: 162px;
+  height: 40px;
+  border-radius: 6px; }
 .form-group label {
   font-size: 14px;
   margin-bottom: 2px; }
 
-.btn {
-  width: 162px;
-  height: 40px;
-  border-radius: 6px; }
-
 .form-control {
   width: 250px;
   height: 35px; }
+
+#logoSidebar {
+  width: 53px;
+  height: 50px; }
+
+nav-item {
+  color: #fff; }
+
+.navbar.fixed-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030; }
+
+@media (min-width: 768px) {
+  .navbar.fixed-left {
+    bottom: 0;
+    width: 232px;
+    flex-flow: column nowrap;
+    align-items: flex-start; } }
