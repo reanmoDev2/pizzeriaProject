@@ -1,18 +1,22 @@
 <?php
-    class Pages extends Controller{
-        public function __construct(){
-        }
-
-        public function index(){
-            $data = [
-                'title' => 'SchmeinkMVC'
-            ];
-
-            $this->view('pages/index', $data);
-        }
-
-        public function about(){
-            $data = ['title' => 'About Us'];
-            $this->view('pages/about', $data);
-        }
+class Pages extends Controller
+{
+    public function __construct()
+    {
     }
+
+    public function index()
+    {
+        $data = [
+            'title' => 'Mamma\'s SIMPLE FOOD'
+        ];
+
+        $this->view('pages/index', $data);
+    }
+
+    public function dashboard()
+    {
+        $data = ['title' => 'Mamma\'s SIMPLE FOOD'];
+        $this->view('pages/dashboard', $data);
+    }
+}

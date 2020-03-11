@@ -41,6 +41,9 @@
   .nav-link {
     padding: 1rem 1.5rem;
   }
+  a {
+    color: inherit;
+  }
   a:hover {
     background-color: #3e3e3e;
     cursor: pointer;

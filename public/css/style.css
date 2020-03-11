@@ -70,6 +70,8 @@ h2 {
     font-weight: 400; }
   #navbarContent .nav-link {
     padding: 1rem 1.5rem; }
+  #navbarContent a {
+    color: inherit; }
   #navbarContent a:hover {
     background-color: #3e3e3e;
     cursor: pointer;
@@ -102,5 +104,5 @@ h2 {
     flex-direction: column; }
     #navbarSymbols .nav-link.bell {
       margin-top: 4px; }
-  #navbarSymbols s a:hover {
+  #navbarSymbols a:hover {
     cursor: pointer; }
