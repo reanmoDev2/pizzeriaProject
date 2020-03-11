@@ -34,13 +34,16 @@
     padding: 1rem 1.5rem; }
   #navbarContent a {
     color: inherit; }
-  #navbarContent a:hover {
+  #navbarContent a:hover,
+  #navbarContent a.active {
     background-color: #3e3e3e;
     cursor: pointer;
     font-weight: 600; }
-    #navbarContent a:hover .icon-color-fill {
+    #navbarContent a:hover .icon-color-fill,
+    #navbarContent a.active .icon-color-fill {
       fill: white; }
-    #navbarContent a:hover .icon-color-stroke {
+    #navbarContent a:hover .icon-color-stroke,
+    #navbarContent a.active .icon-color-stroke {
       stroke: white; }
 
 @media (min-width: 768px) {
