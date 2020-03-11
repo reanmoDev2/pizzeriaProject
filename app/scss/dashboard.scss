@@ -7,6 +7,11 @@ body {
   margin-top: 70px;
   display: flex;
   flex-direction: column;
+  h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 0px;
+  }
   h3 {
     font-size: 18px;
     font-weight: 400;
@@ -14,6 +19,7 @@ body {
     padding-left: 15px;
   }
   .inner-container {
+    margin-top: 38px;
     display: flex;
     width: 100%;
     .sales-container {
