@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/loginheader.php'; ?>
 <div class="container d-flex justify-content-center align-items-center">
     <div>
         <div class="pl-5">

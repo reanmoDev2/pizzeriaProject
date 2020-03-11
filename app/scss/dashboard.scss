@@ -1,0 +1,134 @@
+body {
+  background-color: #fafafa;
+}
+.content-container {
+  padding: 28px 35px;
+  margin-left: 232px;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 15px;
+    padding-left: 15px;
+  }
+  .inner-container {
+    display: flex;
+    width: 100%;
+    .sales-container {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border: 1px solid #bfbfbf;
+      border-radius: 6px;
+      width: 723px;
+      height: 770px;
+      margin-right: 85px;
+      .chart-container {
+        display: flex;
+        flex-direction: row;
+        margin-top: auto;
+        .chart {
+          border: 1px solid black;
+          width: 405px;
+          height: 272px;
+          margin-top: auto;
+          margin-left: 24px;
+          margin-bottom: 42px;
+        }
+        .info-container {
+          margin-top: auto;
+          margin-left: 59px;
+          margin-bottom: 58px;
+          .month {
+            color: #585858;
+            font-size: 16px;
+            font-weight: 400;
+          }
+          .sum {
+            color: #585858;
+            font-size: 30px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .sold-container {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border: 1px solid #bfbfbf;
+      border-radius: 6px;
+      width: 810px;
+      height: 415px;
+      .sort-container {
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+        h4 {
+          margin: 18px 15px;
+          font-size: 14px;
+          font-weight: 400;
+          &.active {
+            font-weight: 600;
+          }
+          &:hover {
+            cursor: pointer;
+            opacity: 75%;
+          }
+        }
+      }
+
+      .btn-container {
+        margin-top: auto;
+        button {
+          margin-left: 15px;
+          margin-bottom: 15px;
+          width: 40px;
+          height: 40px;
+          border: 1px solid #bfbfbf;
+          border-radius: 6px;
+          &.active {
+            color: white;
+            background-color: #353535;
+          }
+          &:hover {
+            cursor: pointer;
+            background-color: #585858;
+            color: #fff;
+          }
+        }
+      }
+    }
+    ol {
+      margin-left: 1rem;
+      li {
+        display: flex;
+        color: #585858;
+        margin-top: 20px;
+        &.active {
+          color: #353535;
+          .name {
+            font-weight: 600;
+          }
+        }
+        .price {
+          width: 130px;
+          text-align: right;
+          margin-right: 60px;
+          font-size: 25px;
+          font-weight: 600;
+        }
+        .name {
+          font-size: 16px;
+          display: flex;
+          align-self: center;
+          &:hover {
+            cursor: pointer;
+            opacity: 75%;
+          }
+        }
+      }
+    }
+  }
+}
