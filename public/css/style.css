@@ -36,19 +36,48 @@ h2 {
   width: 250px;
   height: 35px; }
 
-#logoSidebar {
-  width: 53px;
-  height: 50px; }
-
-nav-item {
-  color: #fff; }
-
 .navbar.fixed-left {
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1030; }
+  z-index: 1030;
+  background-color: #353535;
+  color: white;
+  padding: 0px; }
+  .navbar.fixed-left .nav-brand {
+    padding: 0.5rem 1rem; }
+    .navbar.fixed-left .nav-brand #logoSidebar {
+      width: 53px;
+      height: 50px; }
+
+#navbarContent {
+  padding-top: 1rem; }
+  #navbarContent .nav-link {
+    display: flex;
+    flex-direction: row; }
+    #navbarContent .nav-link svg {
+      margin-right: 1rem; }
+    #navbarContent .nav-link .icon-color-fill {
+      fill: #bfbfbf; }
+    #navbarContent .nav-link .icon-color-stroke {
+      stroke: #bfbfbf; }
+  #navbarContent .nav-item {
+    width: 100%;
+    text-decoration: none;
+    display: block;
+    font-weight: 400; }
+  #navbarContent .nav-link {
+    padding: 1rem 1.5rem; }
+  #navbarContent a:hover {
+    background-color: #3e3e3e;
+    cursor: pointer;
+    font-weight: 600; }
+    #navbarContent a:hover .icon-color-fill {
+      fill: white; }
+    #navbarContent a:hover .icon-color-stroke {
+      stroke: white; }
 
 @media (min-width: 768px) {
   .navbar.fixed-left {
