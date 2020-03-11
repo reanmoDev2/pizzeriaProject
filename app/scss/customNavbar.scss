@@ -1,0 +1,25 @@
+#customNavbar {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #c4c4c4;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#navbarSymbols {
+  margin-left: auto;
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-item {
+    margin-right: 1.7rem;
+  }
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    &.bell {
+      margin-top: 4px;
+    }
+  }
+  s a:hover {
+    cursor: pointer;
+  }
+}

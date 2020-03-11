@@ -85,3 +85,22 @@ h2 {
     width: 232px;
     flex-flow: column nowrap;
     align-items: flex-start; } }
+#customNavbar {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #c4c4c4;
+  padding-left: 0px;
+  padding-right: 0px; }
+
+#navbarSymbols {
+  margin-left: auto; }
+  #navbarSymbols .navbar-nav {
+    flex-direction: row; }
+  #navbarSymbols .nav-item {
+    margin-right: 1.7rem; }
+  #navbarSymbols .nav-link {
+    display: flex;
+    flex-direction: column; }
+    #navbarSymbols .nav-link.bell {
+      margin-top: 4px; }
+  #navbarSymbols s a:hover {
+    cursor: pointer; }
