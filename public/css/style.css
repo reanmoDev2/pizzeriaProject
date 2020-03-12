@@ -195,7 +195,7 @@ body {
   display: flex; }
   .content-container .header-container .btn-container {
     margin-left: auto; }
-    .content-container .header-container .btn-container button {
+    .content-container .header-container .btn-container .btn {
       width: 135px;
       height: 40px; }
 .content-container .filter-container {

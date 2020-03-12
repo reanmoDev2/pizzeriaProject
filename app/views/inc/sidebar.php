@@ -24,7 +24,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="<?php echo URLROOT; ?>/pages/menu" class="nav-link <?php if ($data['activeSide'] == 'menu') echo ('active'); ?>">
+        <a href="<?php echo URLROOT; ?>/menus/menu" class="nav-link <?php if ($data['activeSide'] == 'menu') echo ('active'); ?>">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24.144" viewBox="0 0 22 24.144">
             <g id="Gruppe_1" data-name="Gruppe 1" transform="translate(-38 -154.856)">
               <g class="icon-color-stroke" id="Rechteck_11" data-name="Rechteck 11" transform="translate(38 157)" fill="none" stroke="#bfbfbf" stroke-width="1.5">

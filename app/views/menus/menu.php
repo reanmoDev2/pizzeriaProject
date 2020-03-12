@@ -6,8 +6,8 @@
   <div class="header-container">
     <h2>Speisekarte</h2>
     <div class="btn-container">
-      <button id="import" class="btn btn-dark mr-4">IMPORT EXCEL</button>
-      <button id="add" class="btn btn-dark">ANLEGEN</button>
+      <a href="#" id="import" class="btn btn-dark mr-4">IMPORT EXCEL</a>
+      <a href="<?php echo URLROOT; ?>/menus/mealinfo" id="add" class="btn btn-dark">ANLEGEN</a>
     </div>
   </div>
 
@@ -50,8 +50,8 @@
                 </svg>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                <button class="dropdown-item" type="button">Bearbeiten</button>
-                <button class="dropdown-item" type="button">Löschen</button>
+                <a href="<?php echo URLROOT; ?>/menus/mealinfo" class="dropdown-item">Bearbeiten</a>
+                <a href="#" class="dropdown-item">Löschen</a>
               </div>
             </div>
 
@@ -81,8 +81,8 @@
                 </svg>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                <button class="dropdown-item" type="button">Bearbeiten</button>
-                <button class="dropdown-item" type="button">Löschen</button>
+                <a href="<?php echo URLROOT; ?>/menus/mealinfo" class="dropdown-item">Bearbeiten</a>
+                <a href="#" class="dropdown-item">Löschen</a>
               </div>
             </div>
 
@@ -110,8 +110,8 @@
                 </svg>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                <button class="dropdown-item" type="button">Bearbeiten</button>
-                <button class="dropdown-item" type="button">Löschen</button>
+                <a href="<?php echo URLROOT; ?>/menus/mealinfo" class="dropdown-item">Bearbeiten</a>
+                <a href="#" class="dropdown-item">Löschen</a>
               </div>
             </div>
           </td>

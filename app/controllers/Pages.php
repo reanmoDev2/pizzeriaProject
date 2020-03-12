@@ -21,14 +21,6 @@ class Pages extends Controller
         ];
         $this->view('pages/dashboard', $data);
     }
-
-    public function menu()
-    {
-        $data = [
-            'activeSide' => 'menu'
-        ];
-        $this->view('pages/menu', $data);
-    }
     public function orders()
     {
         $data = [
