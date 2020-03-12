@@ -5,19 +5,19 @@ class Menus extends Controller
   {
   }
 
-  public function menu()
+  public function index()
   {
     $data = [
       'activeSide' => 'menu'
     ];
-    $this->view('menus/menu', $data);
+    $this->view('menus/index', $data);
   }
 
-  public function mealinfo()
+  public function show()
   {
     $data = [
       'activeSide' => 'menu'
     ];
-    $this->view('menus/mealinfo', $data);
+    $this->view('menus/show', $data);
   }
 }
