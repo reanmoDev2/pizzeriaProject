@@ -212,26 +212,52 @@ body {
     border: none; }
     .content-container .filter-container input:focus {
       outline: none; }
-.content-container .table-container .table thead {
-  color: #bfbfbf;
-  font-size: 16px;
-  font-weight: 600px; }
-.content-container .table-container .table tbody tr:hover {
-  background-color: #f5f5f5; }
-.content-container .table-container .table tbody .name {
-  display: flex; }
-  .content-container .table-container .table tbody .name img {
-    align-self: center;
-    width: 59px;
-    height: 34px; }
-  .content-container .table-container .table tbody .name .info {
-    margin-left: 37px; }
-    .content-container .table-container .table tbody .name .info .heading {
-      color: #1a1a1a;
-      font-size: 14px; }
-    .content-container .table-container .table tbody .name .info .category {
-      color: #909090;
-      font-size: 12px; }
-.content-container .table-container .table tbody .value {
-  font-size: 14px;
-  color: #1a1a1a; }
+.content-container .table-container {
+  margin-top: 30px; }
+  .content-container .table-container .table td,
+  .content-container .table-container .table th {
+    border-bottom: 1px solid #c4c4c4;
+    border-top: none; }
+  .content-container .table-container .table thead {
+    color: #bfbfbf;
+    font-size: 16px;
+    font-weight: 600px; }
+  .content-container .table-container .table tbody tr:hover {
+    background-color: #f5f5f5; }
+    .content-container .table-container .table tbody tr:hover svg {
+      visibility: visible; }
+  .content-container .table-container .table tbody .name {
+    display: flex; }
+    .content-container .table-container .table tbody .name img {
+      align-self: center;
+      width: 59px;
+      height: 34px; }
+    .content-container .table-container .table tbody .name .info {
+      margin-left: 37px; }
+      .content-container .table-container .table tbody .name .info .heading {
+        color: #1a1a1a;
+        font-size: 14px; }
+      .content-container .table-container .table tbody .name .info .category {
+        color: #909090;
+        font-size: 12px; }
+  .content-container .table-container .table tbody .value {
+    vertical-align: middle;
+    font-size: 14px;
+    color: #1a1a1a; }
+  .content-container .table-container .table tbody .dots {
+    vertical-align: middle; }
+    .content-container .table-container .table tbody .dots svg {
+      visibility: hidden; }
+    .content-container .table-container .table tbody .dots .dropdown-menu {
+      background-color: #353535;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      margin-top: 0px;
+      left: 50px !important; }
+      .content-container .table-container .table tbody .dots .dropdown-menu .dropdown-item {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 14px;
+        color: #fff; }
+        .content-container .table-container .table tbody .dots .dropdown-menu .dropdown-item:hover {
+          color: #1a1a1a; }
