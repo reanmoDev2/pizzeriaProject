@@ -1,5 +1,6 @@
-@import 'sidebar.scss';
-@import 'customNavbar.scss';
-@import 'dashboard.scss';
-@import 'index.scss';
-@import 'show.scss';
+@import 'inc/sidebar.scss';
+@import 'inc/customNavbar.scss';
+@import 'dashboards/index.scss';
+@import 'menus/index.scss';
+@import 'menus/show.scss';
+@import 'orders/index.scss';
