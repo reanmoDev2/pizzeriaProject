@@ -306,3 +306,29 @@ form {
       color: #909090; }
     form .row textarea {
       resize: none; }
+
+.wrapper {
+  width: 100%; }
+  .wrapper .section .heading {
+    padding-left: 0px; }
+  .wrapper .opening-hours {
+    margin-top: 23px;
+    margin-bottom: 56px; }
+    .wrapper .opening-hours .weekday {
+      display: flex;
+      margin-bottom: 7px; }
+      .wrapper .opening-hours .weekday .abbreviation {
+        width: 27px;
+        margin-right: 18px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #585858; }
+      .wrapper .opening-hours .weekday .time {
+        margin-right: 50px; }
+        .wrapper .opening-hours .weekday .time i {
+          font-size: 5px; }
+  .wrapper .acc {
+    margin-top: 30px; }
+  .wrapper .user-settings {
+    margin-top: 16px;
+    max-width: 700px; }
