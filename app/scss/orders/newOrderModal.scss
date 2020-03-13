@@ -1,0 +1,99 @@
+.modal-dialog {
+  max-height: 900px;
+  max-width: 1080px;
+  .modal-content {
+    background-color: #fafafa;
+    .modal-header {
+      border-bottom: 1px solid #c4c4c4;
+      padding: 20px 40px;
+      .modal-title {
+        font-size: 25px;
+        font-weight: 600;
+        color: #353535;
+      }
+    }
+    .modal-body {
+      padding: 30px 40px;
+      height: 750px;
+      max-height: 750px;
+      overflow-y: auto;
+      .input-group-prepend {
+        background-color: #fff;
+        border: 1px solid #c4c4c4;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        width: 38px;
+        height: 38px;
+        padding: 10px 10px;
+        .scope-pic {
+          width: 20px;
+          height: 18px;
+        }
+      }
+      .search-bar {
+        border-left: none;
+        border-color: #c4c4c4;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+          border-color: #c4c4c4;
+        }
+      }
+      .suggestion {
+        margin-top: 40px;
+        .heading {
+          font-size: 18px;
+          font-weight: 600;
+        }
+        .item-container {
+          display: flex;
+          .item {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            margin-right: 20px;
+            max-width: 146px;
+            min-width: 146px;
+            height: 200px;
+            border: 1px solid #c4c4c4;
+            border-radius: 6px;
+            &.active {
+              border-color: #009046;
+              border-width: 2px;
+            }
+            .item-pic {
+              margin: 0 auto;
+              margin-top: 15px;
+              width: 109px;
+              height: 62px;
+            }
+            .name {
+              font-size: 16px;
+              font-weight: 600;
+              color: #585858;
+              text-align: center;
+              padding: 16px 10px;
+            }
+            .price {
+              font-size: 18px;
+              font-weight: 700;
+              color: #009046;
+              text-align: center;
+              margin-top: auto;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+    .modal-footer {
+      padding: 20px 40px;
+      background-color: #f0f0f0;
+      .btn {
+        width: 190px;
+        height: 40px;
+        font-size: 14px;
+      }
+    }
+  }
+}

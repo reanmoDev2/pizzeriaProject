@@ -397,6 +397,87 @@ form {
 .order-in-progress-container {
   margin-top: 50px; }
 
+.modal-dialog {
+  max-height: 900px;
+  max-width: 1080px; }
+  .modal-dialog .modal-content {
+    background-color: #fafafa; }
+    .modal-dialog .modal-content .modal-header {
+      border-bottom: 1px solid #c4c4c4;
+      padding: 20px 40px; }
+      .modal-dialog .modal-content .modal-header .modal-title {
+        font-size: 25px;
+        font-weight: 600;
+        color: #353535; }
+    .modal-dialog .modal-content .modal-body {
+      padding: 30px 40px;
+      height: 750px;
+      max-height: 750px;
+      overflow-y: auto; }
+      .modal-dialog .modal-content .modal-body .input-group-prepend {
+        background-color: #fff;
+        border: 1px solid #c4c4c4;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        width: 38px;
+        height: 38px;
+        padding: 10px 10px; }
+        .modal-dialog .modal-content .modal-body .input-group-prepend .scope-pic {
+          width: 20px;
+          height: 18px; }
+      .modal-dialog .modal-content .modal-body .search-bar {
+        border-left: none;
+        border-color: #c4c4c4; }
+        .modal-dialog .modal-content .modal-body .search-bar:focus {
+          outline: none;
+          box-shadow: none;
+          border-color: #c4c4c4; }
+      .modal-dialog .modal-content .modal-body .suggestion {
+        margin-top: 40px; }
+        .modal-dialog .modal-content .modal-body .suggestion .heading {
+          font-size: 18px;
+          font-weight: 600; }
+        .modal-dialog .modal-content .modal-body .suggestion .item-container {
+          display: flex; }
+          .modal-dialog .modal-content .modal-body .suggestion .item-container .item {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            margin-right: 20px;
+            max-width: 146px;
+            min-width: 146px;
+            height: 200px;
+            border: 1px solid #c4c4c4;
+            border-radius: 6px; }
+            .modal-dialog .modal-content .modal-body .suggestion .item-container .item.active {
+              border-color: #009046;
+              border-width: 2px; }
+            .modal-dialog .modal-content .modal-body .suggestion .item-container .item .item-pic {
+              margin: 0 auto;
+              margin-top: 15px;
+              width: 109px;
+              height: 62px; }
+            .modal-dialog .modal-content .modal-body .suggestion .item-container .item .name {
+              font-size: 16px;
+              font-weight: 600;
+              color: #585858;
+              text-align: center;
+              padding: 16px 10px; }
+            .modal-dialog .modal-content .modal-body .suggestion .item-container .item .price {
+              font-size: 18px;
+              font-weight: 700;
+              color: #009046;
+              text-align: center;
+              margin-top: auto;
+              margin-bottom: 10px; }
+    .modal-dialog .modal-content .modal-footer {
+      padding: 20px 40px;
+      background-color: #f0f0f0; }
+      .modal-dialog .modal-content .modal-footer .btn {
+        width: 190px;
+        height: 40px;
+        font-size: 14px; }
+
 .wrapper {
   width: 100%; }
   .wrapper .section .heading {

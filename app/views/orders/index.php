@@ -1,12 +1,14 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <?php require APPROOT . '/views/inc/sidebar.php'; ?>
 <?php require APPROOT . '/views/inc/navbar.php'; ?>
+<!-- Modals -->
+<?php include APPROOT . '/views/orders/newOrderModal.php'; ?>
 
 <div class="content-container">
   <div class="header-container">
     <h2>Bestellungen</h2>
     <div class="btn-container">
-      <a href="#" id="newOrder" class="btn btn-dark btn-order">NEUE BESTELLUNG</a>
+      <a href="#" id="newOrder" class="btn btn-dark btn-order" data-toggle="modal" data-target="#newOrderModal">NEUE BESTELLUNG</a>
     </div>
   </div>
   <div class="order-request-container">
