@@ -15,19 +15,17 @@
           <div class="abbreviation">Mo</div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
@@ -36,19 +34,17 @@
           <div class="abbreviation">Di</div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
@@ -57,19 +53,17 @@
           <div class="abbreviation">Mi</div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
@@ -78,19 +72,17 @@
           <div class="abbreviation">Do</div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
@@ -99,19 +91,17 @@
           <div class="abbreviation">Fr</div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30" required>
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
                 <i class="far fa-clock"></i>
-                <!-- <span class="input-group-text" id="basicClock">@</span> -->
               </div>
             </div>
           </div>
@@ -120,19 +110,17 @@
           <div class="abbreviation">Sa</div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
@@ -141,19 +129,17 @@
           <div class="abbreviation">So</div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
           <div class="time">
             <div class="input-group">
-              <input type="time" class="form-control" aria-describedby="basicClock" value="08:30">
+              <input type="time" class="form-control" value="08:30" required>
               <div class="input-group-append">
-                <!-- <i class="far fa-clock input-group-text" id="basicClock"></i> -->
-                <span class="input-group-text" id="basicClock">@</span>
+                <i class="far fa-clock"></i>
               </div>
             </div>
           </div>

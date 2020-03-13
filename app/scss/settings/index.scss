@@ -20,8 +20,20 @@
       }
       .time {
         margin-right: 50px;
-        i {
-          font-size: 5px;
+        .input-group {
+          .input-group-append {
+            .fa-clock {
+              color: #495057;
+              background-color: #e9ecef;
+              border: 1px solid #ced4da;
+              border-radius: 0.25rem;
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+              width: 42px;
+              height: 38px;
+              padding: 10px 10px;
+            }
+          }
         }
       }
     }
@@ -31,6 +43,9 @@
   }
   .user-settings {
     margin-top: 16px;
-    max-width: 700px;
+    max-width: none;
+    .form-group {
+      max-width: 250px;
+    }
   }
 }
