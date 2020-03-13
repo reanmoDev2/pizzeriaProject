@@ -93,8 +93,11 @@ body {
   .content-container h3 {
     font-size: 18px;
     font-weight: 400;
-    padding-top: 15px;
-    padding-left: 15px; }
+    margin-bottom: 0; }
+    .content-container h3.dashboard {
+      padding-top: 15px;
+      padding-left: 15px;
+      margin-bottom: 8px; }
   .content-container .inner-container {
     margin-top: 38px;
     display: flex;
@@ -195,10 +198,16 @@ body {
 .content-container .header-container {
   display: flex; }
   .content-container .header-container .btn-container {
-    margin-left: auto; }
+    margin-left: auto;
+    display: flex; }
     .content-container .header-container .btn-container .btn {
       width: 135px;
-      height: 40px; }
+      height: 40px;
+      font-size: 14px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
 .content-container .filter-container {
   margin-top: 13px;
   display: flex;
@@ -306,6 +315,67 @@ form {
       color: #909090; }
     form .row textarea {
       resize: none; }
+
+.btn-order {
+  width: 160px !important; }
+
+.order {
+  margin-top: 35px; }
+  .order .notifier {
+    margin-bottom: 10px; }
+  .order .new-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px; }
+    .order .new-line .pizza-pic {
+      width: 122px;
+      height: 70px; }
+    .order .new-line .description {
+      margin-left: 41px; }
+      .order .new-line .description .product-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1a1a1a; }
+      .order .new-line .description .price {
+        font-size: 18px;
+        font-weight: 600;
+        color: #585858; }
+    .order .new-line .customer {
+      margin-left: 57px;
+      font-size: 18;
+      font-weight: 400;
+      color: #1a1a1a; }
+    .order .new-line .btn-container {
+      display: flex;
+      margin-left: 140px; }
+      .order .new-line .btn-container .btn {
+        width: 135px;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+    .order .new-line .delivery {
+      display: flex;
+      align-items: center;
+      margin-left: 96px; }
+      .order .new-line .delivery .fa-clock {
+        width: 30px;
+        height: 30px; }
+      .order .new-line .delivery .delivery-time {
+        font-size: 18px;
+        font-weight: 400;
+        color: #1a1a1a;
+        margin-left: 14px; }
+      .order .new-line .delivery .timer {
+        font-size: 18px;
+        font-weight: 600;
+        color: #353535;
+        margin-left: 32px; }
+
+.order-in-progress-container {
+  margin-top: 50px; }
 
 .wrapper {
   width: 100%; }

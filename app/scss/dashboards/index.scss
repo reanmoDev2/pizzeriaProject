@@ -15,8 +15,12 @@ body {
   h3 {
     font-size: 18px;
     font-weight: 400;
-    padding-top: 15px;
-    padding-left: 15px;
+    margin-bottom: 0;
+    &.dashboard {
+      padding-top: 15px;
+      padding-left: 15px;
+      margin-bottom: 8px;
+    }
   }
   .inner-container {
     margin-top: 38px;

@@ -3,9 +3,15 @@
     display: flex;
     .btn-container {
       margin-left: auto;
+      display: flex;
       .btn {
         width: 135px;
         height: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

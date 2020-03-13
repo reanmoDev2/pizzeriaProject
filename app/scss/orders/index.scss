@@ -1,0 +1,75 @@
+.btn-order {
+  width: 160px !important;
+}
+
+.order {
+  margin-top: 35px;
+  .notifier {
+    margin-bottom: 10px;
+  }
+  .new-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    .pizza-pic {
+      width: 122px;
+      height: 70px;
+    }
+    .description {
+      margin-left: 41px;
+      .product-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .price {
+        font-size: 18px;
+        font-weight: 600;
+        color: #585858;
+      }
+    }
+    .customer {
+      margin-left: 57px;
+      font-size: 18;
+      font-weight: 400;
+      color: #1a1a1a;
+    }
+    .btn-container {
+      display: flex;
+      margin-left: 140px;
+      .btn {
+        width: 135px;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .delivery {
+      display: flex;
+      align-items: center;
+      margin-left: 96px;
+      .fa-clock {
+        width: 30px;
+        height: 30px;
+      }
+      .delivery-time {
+        font-size: 18px;
+        font-weight: 400;
+        color: #1a1a1a;
+        margin-left: 14px;
+      }
+      .timer {
+        font-size: 18px;
+        font-weight: 600;
+        color: #353535;
+        margin-left: 32px;
+      }
+    }
+  }
+}
+.order-in-progress-container {
+  margin-top: 50px;
+}

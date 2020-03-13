@@ -6,7 +6,7 @@
   <h2>Dashboard</h2>
   <div class="inner-container">
     <div class="sales-container">
-      <h3>Umsatz</h3>
+      <h3 class="dashboard">Umsatz</h3>
       <ol class="list-unstyled">
         <li class="list-item">
           <div class="price">2.553,90€</div>
@@ -46,7 +46,7 @@
     <div class="sold-container">
       <div class="d-flex">
         <div>
-          <h3>Meist Verkauft</h3>
+          <h3 class="dashboard">Meist Verkauft</h3>
         </div>
 
         <div class="sort-container">
