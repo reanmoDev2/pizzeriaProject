@@ -23,6 +23,15 @@
     &.bell {
       margin-top: 4px;
     }
+    &.user-icon {
+      margin-top: 7px;
+      font-size: 12px;
+      color: white;
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      justify-content: center;
+    }
   }
   a:hover {
     cursor: pointer;

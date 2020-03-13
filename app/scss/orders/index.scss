@@ -11,12 +11,26 @@
     display: flex;
     align-items: center;
     margin-bottom: 35px;
-    .pizza-pic {
-      width: 122px;
-      height: 70px;
+    .pic-container {
+      min-width: 160px;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      .pizza-pic {
+        max-width: 160px;
+        max-height: 90px;
+        width: 122px;
+        height: 70px;
+      }
+      .bruschetta-pic {
+        max-width: 160px;
+        max-height: 90px;
+        width: 144px;
+        height: 72px;
+      }
     }
     .description {
-      margin-left: 41px;
+      margin-left: 10px;
       .product-name {
         font-size: 18px;
         font-weight: 600;

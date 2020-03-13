@@ -22,7 +22,9 @@
         </svg>
       </div>
       <div class="new-line">
-        <img class="pizza-pic" src="<?php echo URLROOT; ?>/img/pizza_margherita.png" alt="">
+        <div class="pic-container">
+          <img class="pizza-pic" src="<?php echo URLROOT; ?>/img/pizza_margherita.png" alt="">
+        </div>
         <div class="description">
           <div class="product-name">1x Pizza Margherita Gouda (medium)</div>
           <div class="price">10,50€</div>
@@ -43,7 +45,9 @@
     <h3>In Bearbeitung</h3>
     <div class="order in-progress">
       <div class="new-line">
-        <img class="pizza-pic" src="<?php echo URLROOT; ?>/img/pizza_margherita.png" alt="">
+        <div class="pic-container">
+          <img class="pizza-pic" src="<?php echo URLROOT; ?>/img/pizza_margherita.png" alt="">
+        </div>
         <div class="description">
           <div class="product-name">1x Pizza Margherita Gouda (medium)</div>
           <div class="price">10,50€</div>
@@ -66,7 +70,9 @@
     </div>
     <div class="order in-progress">
       <div class="new-line">
-        <img class="pizza-pic" src="<?php echo URLROOT; ?>/img/pizza_margherita.png" alt="">
+        <div class="pic-container">
+          <img class="pizza-pic" src="<?php echo URLROOT; ?>/img/pizza_margherita.png" alt="">
+        </div>
         <div class="description">
           <div class="product-name">1x Pizza Margherita Gouda (medium)</div>
           <div class="price">10,50€</div>
@@ -86,7 +92,9 @@
         </div>
       </div>
       <div class="new-line">
-        <img class="pizza-pic" src="<?php echo URLROOT; ?>/img/bruschetta.png" alt="">
+        <div class="pic-container">
+          <img class="bruschetta-pic" src="<?php echo URLROOT; ?>/img/bruschetta.png" alt="">
+        </div>
         <div class="description">
           <div class="product-name">1x Bruschetta</div>
           <div class="price">4,50€</div>

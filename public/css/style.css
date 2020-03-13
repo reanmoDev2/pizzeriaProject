@@ -74,6 +74,14 @@
     flex-direction: column; }
     #navbarSymbols .nav-link.bell {
       margin-top: 4px; }
+    #navbarSymbols .nav-link.user-icon {
+      margin-top: 7px;
+      font-size: 12px;
+      color: white;
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      justify-content: center; }
   #navbarSymbols a:hover {
     cursor: pointer; }
 
@@ -327,11 +335,23 @@ form {
     display: flex;
     align-items: center;
     margin-bottom: 35px; }
-    .order .new-line .pizza-pic {
-      width: 122px;
-      height: 70px; }
+    .order .new-line .pic-container {
+      min-width: 160px;
+      min-height: 90px;
+      display: flex;
+      align-items: center; }
+      .order .new-line .pic-container .pizza-pic {
+        max-width: 160px;
+        max-height: 90px;
+        width: 122px;
+        height: 70px; }
+      .order .new-line .pic-container .bruschetta-pic {
+        max-width: 160px;
+        max-height: 90px;
+        width: 144px;
+        height: 72px; }
     .order .new-line .description {
-      margin-left: 41px; }
+      margin-left: 10px; }
       .order .new-line .description .product-name {
         font-size: 18px;
         font-weight: 600;
