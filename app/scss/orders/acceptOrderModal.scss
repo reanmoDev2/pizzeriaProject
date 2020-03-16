@@ -1,0 +1,55 @@
+.accept-order-dialog {
+  max-height: 340px;
+  max-width: 520px;
+  .accept-order-content {
+    background-color: #fafafa;
+    .modal-header {
+      border-bottom: 1px solid #c4c4c4;
+      padding: 20px 40px;
+      .modal-title {
+        font-size: 25px;
+        font-weight: 600;
+        color: #353535;
+      }
+    }
+    .modal-body {
+      padding: 30px 40px;
+      height: 265px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      .line-wrapper {
+        display: flex;
+        .title {
+          font-size: 18px;
+          font-weight: 400;
+          color: #353535;
+          min-width: 160px;
+        }
+        .time-container {
+          display: flex;
+          .fa-clock {
+            margin-left: 50px;
+            width: 30px;
+            height: 30px;
+            color: #353535;
+          }
+          .datetime {
+            font-size: 18px;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-left: 15px;
+          }
+        }
+        .time-selecter {
+          display: flex;
+          margin-left: 50px;
+          border-radius: 90px;
+        }
+      }
+      .accept {
+        margin-top: auto;
+      }
+    }
+  }
+}

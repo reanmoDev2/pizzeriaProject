@@ -397,24 +397,24 @@ form {
 .order-in-progress-container {
   margin-top: 50px; }
 
-.modal-dialog {
+.new-order-dialog {
   max-height: 900px;
   max-width: 1080px; }
-  .modal-dialog .modal-content {
+  .new-order-dialog .new-order-content {
     background-color: #fafafa; }
-    .modal-dialog .modal-content .modal-header {
+    .new-order-dialog .new-order-content .modal-header {
       border-bottom: 1px solid #c4c4c4;
       padding: 20px 40px; }
-      .modal-dialog .modal-content .modal-header .modal-title {
+      .new-order-dialog .new-order-content .modal-header .modal-title {
         font-size: 25px;
         font-weight: 600;
         color: #353535; }
-    .modal-dialog .modal-content .modal-body {
+    .new-order-dialog .new-order-content .modal-body {
       padding: 30px 40px;
       height: 750px;
       max-height: 750px;
       overflow-y: auto; }
-      .modal-dialog .modal-content .modal-body .input-group-prepend {
+      .new-order-dialog .new-order-content .modal-body .input-group-prepend {
         background-color: #fff;
         border: 1px solid #c4c4c4;
         border-top-left-radius: 4px;
@@ -422,24 +422,24 @@ form {
         width: 38px;
         height: 38px;
         padding: 10px 10px; }
-        .modal-dialog .modal-content .modal-body .input-group-prepend .scope-pic {
+        .new-order-dialog .new-order-content .modal-body .input-group-prepend .scope-pic {
           width: 20px;
           height: 18px; }
-      .modal-dialog .modal-content .modal-body .search-bar {
+      .new-order-dialog .new-order-content .modal-body .search-bar {
         border-left: none;
         border-color: #c4c4c4; }
-        .modal-dialog .modal-content .modal-body .search-bar:focus {
+        .new-order-dialog .new-order-content .modal-body .search-bar:focus {
           outline: none;
           box-shadow: none;
           border-color: #c4c4c4; }
-      .modal-dialog .modal-content .modal-body .suggestion {
+      .new-order-dialog .new-order-content .modal-body .suggestion {
         margin-top: 40px; }
-        .modal-dialog .modal-content .modal-body .suggestion .heading {
+        .new-order-dialog .new-order-content .modal-body .suggestion .heading {
           font-size: 18px;
           font-weight: 600; }
-        .modal-dialog .modal-content .modal-body .suggestion .item-container {
+        .new-order-dialog .new-order-content .modal-body .suggestion .item-container {
           display: flex; }
-          .modal-dialog .modal-content .modal-body .suggestion .item-container .item {
+          .new-order-dialog .new-order-content .modal-body .suggestion .item-container .item {
             display: flex;
             flex-direction: column;
             margin-top: 20px;
@@ -449,34 +449,78 @@ form {
             height: 200px;
             border: 1px solid #c4c4c4;
             border-radius: 6px; }
-            .modal-dialog .modal-content .modal-body .suggestion .item-container .item.active {
+            .new-order-dialog .new-order-content .modal-body .suggestion .item-container .item.active {
               border-color: #009046;
               border-width: 2px; }
-            .modal-dialog .modal-content .modal-body .suggestion .item-container .item .item-pic {
+            .new-order-dialog .new-order-content .modal-body .suggestion .item-container .item .item-pic {
               margin: 0 auto;
               margin-top: 15px;
               width: 109px;
               height: 62px; }
-            .modal-dialog .modal-content .modal-body .suggestion .item-container .item .name {
+            .new-order-dialog .new-order-content .modal-body .suggestion .item-container .item .name {
               font-size: 16px;
               font-weight: 600;
               color: #585858;
               text-align: center;
               padding: 16px 10px; }
-            .modal-dialog .modal-content .modal-body .suggestion .item-container .item .price {
+            .new-order-dialog .new-order-content .modal-body .suggestion .item-container .item .price {
               font-size: 18px;
               font-weight: 700;
               color: #009046;
               text-align: center;
               margin-top: auto;
               margin-bottom: 10px; }
-    .modal-dialog .modal-content .modal-footer {
+    .new-order-dialog .new-order-content .modal-footer {
       padding: 20px 40px;
       background-color: #f0f0f0; }
-      .modal-dialog .modal-content .modal-footer .btn {
+      .new-order-dialog .new-order-content .modal-footer .btn {
         width: 190px;
         height: 40px;
         font-size: 14px; }
+
+.accept-order-dialog {
+  max-height: 340px;
+  max-width: 520px; }
+  .accept-order-dialog .accept-order-content {
+    background-color: #fafafa; }
+    .accept-order-dialog .accept-order-content .modal-header {
+      border-bottom: 1px solid #c4c4c4;
+      padding: 20px 40px; }
+      .accept-order-dialog .accept-order-content .modal-header .modal-title {
+        font-size: 25px;
+        font-weight: 600;
+        color: #353535; }
+    .accept-order-dialog .accept-order-content .modal-body {
+      padding: 30px 40px;
+      height: 265px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column; }
+      .accept-order-dialog .accept-order-content .modal-body .line-wrapper {
+        display: flex; }
+        .accept-order-dialog .accept-order-content .modal-body .line-wrapper .title {
+          font-size: 18px;
+          font-weight: 400;
+          color: #353535;
+          min-width: 160px; }
+        .accept-order-dialog .accept-order-content .modal-body .line-wrapper .time-container {
+          display: flex; }
+          .accept-order-dialog .accept-order-content .modal-body .line-wrapper .time-container .fa-clock {
+            margin-left: 50px;
+            width: 30px;
+            height: 30px;
+            color: #353535; }
+          .accept-order-dialog .accept-order-content .modal-body .line-wrapper .time-container .datetime {
+            font-size: 18px;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-left: 15px; }
+        .accept-order-dialog .accept-order-content .modal-body .line-wrapper .time-selecter {
+          display: flex;
+          margin-left: 50px;
+          border-radius: 90px; }
+      .accept-order-dialog .accept-order-content .modal-body .accept {
+        margin-top: auto; }
 
 .wrapper {
   width: 100%; }

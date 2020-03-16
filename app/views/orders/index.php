@@ -3,6 +3,7 @@
 <?php require APPROOT . '/views/inc/navbar.php'; ?>
 <!-- Modals -->
 <?php include APPROOT . '/views/orders/newOrderModal.php'; ?>
+<?php include APPROOT . '/views/orders/acceptOrderModal.php'; ?>
 
 <div class="content-container">
   <div class="header-container">
@@ -37,7 +38,7 @@
         </div>
         <div class="btn-container">
           <a href="#" class="btn btn-danger mr-5">ABLEHNEN</a>
-          <a href="#" class="btn btn-success">ANNEHMEN</a>
+          <a href="#" class="btn btn-success" id="acceptOrder" data-toggle="modal" data-target="#acceptOrderModal">ANNEHMEN</a>
         </div>
       </div>
       <div class="border-bottom border-lightgrey"></div>

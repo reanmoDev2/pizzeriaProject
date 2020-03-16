@@ -1,6 +1,6 @@
 <div class="modal fade pl-0 pr-0" id="newOrderModal">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+  <div class="modal-dialog modal-dialog-centered new-order-dialog">
+    <div class="modal-content new-order-content">
       <div class="modal-header">
         <div class="modal-title">Bestellung aufgeben</div>
         <button class="close" data-dismiss="modal">&times;</button>
