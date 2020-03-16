@@ -13,14 +13,16 @@
         <div class="text-center pt-5">
             <h2>Anmeldung</h2>
         </div>
-        <form>
+        <form action="<?php echo URLROOT; ?>/logins/index" method="post">
             <div class="form-group pt-4">
-                <label>E-Mail</label>
-                <input type="email" class="form-control" />
+                <label for="email">E-Mail</label>
+                <input type="email" name="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>" />
+                <span class="invalid-feedback"><?php echo $data['email_err']; ?></span>
             </div>
             <div class="form-group">
-                <label>Passwort</label>
-                <input type="password" class="form-control" />
+                <label for="password">Passwort</label>
+                <input type="password" name="password" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password']; ?>" />
+                <span class="invalid-feedback"><?php echo $data['password_err']; ?></span>
             </div>
             <div class="form-group pt-5 text-center">
                 <input type="submit" value="WEITER" class="btn btn-dark">
