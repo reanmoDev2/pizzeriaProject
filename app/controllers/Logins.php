@@ -14,13 +14,17 @@ class Logins extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            try {
+                $data = [
+                    'email' => trim($_POST['email']),
+                    'password' => trim($_POST['password']),
+                    'email_err' => '',
+                    'password_err' => ''
+                ];
+            } catch (Exception $e) {
+                echo ($e->getTraceAsString());
+            }
 
-            $data = [
-                'email' => trim($_POST['email']),
-                'password' => trim($_POST['password']),
-                'email_err' => '',
-                'password_err' => ''
-            ];
 
             if (empty($data['email'])) {
                 $data['email_err'] = 'Bitte geben Sie eine E-Mail Adresse ein';
@@ -65,7 +69,8 @@ class Logins extends Controller
     {
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_email'] = $user->email;
-        $_SESSION['user_name'] = $user->name;
+        $_SESSION['user_first_name'] = $user->first_name;
+        $_SESSION['user_last_name'] = $user->last_name;
         redirect('dashboards/index');
     }
 
@@ -73,7 +78,8 @@ class Logins extends Controller
     {
         unset($_SESSION['user_id']);
         unset($_SESSION['user_email']);
-        unset($_SESSION['user_name']);
+        unset($_SESSION['user_first_name']);
+        unset($_SESSION['user_last_name']);
         session_destroy();
         redirect('logins/index');
     }

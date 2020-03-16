@@ -5,7 +5,7 @@ class Dashboards extends Controller
   {
     if (isset($_SESSION['user_id'])) {
     } else {
-      $this->view('logins/index', []);
+      redirect('logins/index');
     }
   }
 
