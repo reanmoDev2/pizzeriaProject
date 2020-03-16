@@ -7,7 +7,7 @@
     <h2>Speisekarte</h2>
     <div class="btn-container">
       <a href="#" id="import" class="btn btn-dark mr-4">IMPORT EXCEL</a>
-      <a href="<?php echo URLROOT; ?>/menus/show" id="add" class="btn btn-dark">ANLEGEN</a>
+      <a href="<?php echo URLROOT; ?>/menus/create" id="add" class="btn btn-dark">ANLEGEN</a>
     </div>
   </div>
 
@@ -81,7 +81,7 @@
                 </svg>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                <a href="<?php echo URLROOT; ?>/menus/mealinfo" class="dropdown-item">Bearbeiten</a>
+                <a href="<?php echo URLROOT; ?>/menus/show" class="dropdown-item">Bearbeiten</a>
                 <a href="#" class="dropdown-item">Löschen</a>
               </div>
             </div>
@@ -110,7 +110,7 @@
                 </svg>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                <a href="<?php echo URLROOT; ?>/menus/mealinfo" class="dropdown-item">Bearbeiten</a>
+                <a href="<?php echo URLROOT; ?>/menus/show" class="dropdown-item">Bearbeiten</a>
                 <a href="#" class="dropdown-item">Löschen</a>
               </div>
             </div>

@@ -317,6 +317,13 @@ form {
       margin-right: 53px;
       margin-bottom: 0px;
       padding-right: 0px; }
+      form .row .form-group input::-webkit-outer-spin-button,
+      form .row .form-group input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+      form .row .form-group input[type='number'] {
+        -moz-appearance: textfield;
+        /* Firefox */ }
     form .row label {
       font-size: 14px;
       font-weight: 400;

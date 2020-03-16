@@ -11,7 +11,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link user-icon btn btn-dark" href="<?php echo URLROOT; ?>/logins/logout">
-          <?php echo strtoupper($_SESSION['user_first_name'][0]); ?><?php echo strtoupper($_SESSION['user_last_name'][0]); ?>
+          <?php echo strtoupper($_SESSION['user_first_name'][0]) . strtoupper($_SESSION['user_last_name'][0]); ?>
         </a>
       </li>
     </ul>

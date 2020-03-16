@@ -46,13 +46,4 @@ class User
 
     return $row;
   }
-
-  // public function getUserAbbreviation($email)
-  // {
-  //   $this->db->query('SELECT first_name, last_name FROM users WHERE email = :email');
-  //   $this->db->bind(':email', $email);
-
-  //   $row = $this->db->single();
-  //   return $row;
-  // }
 }
