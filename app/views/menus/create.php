@@ -8,7 +8,6 @@
     <div class="btn-container">
 
       <input type="submit" id="save" class="btn btn-dark mr-4" value="SPEICHERN" form="myform"></input>
-      <a href="#" id="delete" class="btn btn-danger">LÖSCHEN</a>
     </div>
   </div>
   <div class="subheading">
