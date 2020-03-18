@@ -51,4 +51,21 @@ class Menu
       return false;
     }
   }
+
+  public function getAllMenuEntries()
+  {
+    $this->db->query('SELECT
+                          meals.image,
+                          meals.name,
+                          meals.course,
+                          finance.sold,
+                          meals.price_small,
+                          meals.price_medium,
+                          meals.price_large
+                      FROM
+                          `meals`
+                      LEFT JOIN `finance` ON meals.id = finance.meal_id');
+    $results = $this->db->resultSet();
+    return $results;
+  }
 }

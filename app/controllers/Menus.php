@@ -15,7 +15,8 @@ class Menus extends Controller
     $data = [
       'activeSide' => 'menu'
     ];
-    $this->view('menus/index', $data);
+    $results = $this->menuModel->getAllMenuEntries();
+    $this->view('menus/index', $data, $results);
   }
 
   public function show()
@@ -67,10 +68,11 @@ class Menus extends Controller
       if ($statusName) {
         if ($statusImg) {
           if ($this->insertIntoDB($data)) {
-            $target_dir = dirname(__DIR__) . "\storage\\" . $this->menuModel->db->getLastId() . "\\";
+            $target_dir = dirname(APPROOT) . "\public\storage\\" . $this->menuModel->db->getLastId() . "\\";
+            $target_url = URLROOT . "/public/storage/" . $this->menuModel->db->getLastId() . "/" . basename($_FILES["uploadImg"]["name"]);
             $target_file = $target_dir . basename($_FILES["uploadImg"]["name"]);
             if ($this->uploadFile($target_file, $target_dir)) {
-              if ($this->updateImgInDB($data, $target_file)) {
+              if ($this->updateImgInDB($data, $target_url)) {
                 redirect('menus/index');
               } else {
                 $this->view('menus/create', $data);
@@ -165,9 +167,9 @@ class Menus extends Controller
     }
   }
 
-  private function updateImgInDB($data, $target_file)
+  private function updateImgInDB($data, $target_url)
   {
-    $data['img'] = $target_file;
+    $data['img'] = $target_url;
     if ($this->menuModel->updateImage($data['img'])) {
       return true;
     } else {
