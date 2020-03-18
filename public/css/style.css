@@ -310,7 +310,8 @@ form {
       height: 30px;
       margin-right: 20px; }
     form .picture-container label {
-      margin-left: 6px; }
+      margin-left: 6px;
+      cursor: pointer; }
   form .row {
     margin-bottom: 22px; }
     form .row .form-group {
