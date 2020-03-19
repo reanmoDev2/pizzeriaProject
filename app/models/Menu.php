@@ -8,9 +8,20 @@ class Menu
 
     $this->db = new Database;
   }
+
+  public function deleteById($id)
+  {
+    $this->db->query('DELETE FROM `meals` WHERE `meals`.`id` = :id');
+    $this->db->bind(':id', $id);
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   public function insertMeal($data)
   {
-    // ToDo
     $this->db->query('INSERT INTO `meals` (`name`, `course`, `price_small`, `price_medium`, `price_large`, `description`) VALUES (:name, :course, :price_small, :price_medium, :price_large, :description);');
     $this->db->bind(':name', $data['name']);
     $this->db->bind(':course', $data['course']);
@@ -25,12 +36,31 @@ class Menu
     }
   }
 
-  public function updateImage($img)
+  public function updateMeal($data)
   {
-    $lastId = $this->db->getLastId();
+    $this->db->query('UPDATE `meals` 
+                      SET `name` = :name, `course` = :course, `price_small` = :price_small, 
+                      `price_medium` = :price_medium, `price_large` = :price_large, `description` = :description
+                      WHERE `meals`.`id` = :id;');
+    $this->db->bind(':name', $data['name']);
+    $this->db->bind(':course', $data['course']);
+    $this->db->bind(':price_small', $data['price_small']);
+    $this->db->bind(':price_medium', $data['price_medium']);
+    $this->db->bind(':price_large', $data['price_large']);
+    $this->db->bind(':description', $data['description']);
+    $this->db->bind(':id', $data['id']);
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function updateImage($img, $id)
+  {
     $this->db->query('UPDATE `meals` SET `image`= :img WHERE id = :id');
     $this->db->bind(':img', $img);
-    $this->db->bind(':id', $lastId);
+    $this->db->bind(':id', $id);
     if ($this->db->execute()) {
       return true;
     } else {
@@ -55,6 +85,7 @@ class Menu
   public function getAllMenuEntries()
   {
     $this->db->query('SELECT
+                          meals.id,
                           meals.image,
                           meals.name,
                           meals.course,
@@ -67,5 +98,13 @@ class Menu
                       LEFT JOIN `finance` ON meals.id = finance.meal_id');
     $results = $this->db->resultSet();
     return $results;
+  }
+
+  public function getMenuInformation($id)
+  {
+    $this->db->query('SELECT * FROM `meals` WHERE `meals`.`id` = :id');
+    $this->db->bind(':id', $id);
+    $row = $this->db->single();
+    return $row;
   }
 }

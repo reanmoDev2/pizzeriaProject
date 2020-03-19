@@ -42,8 +42,8 @@ class Setting
                       SET `mo_start` = :mo_start, `mo_end` = :mo_end, `di_start` = :di_start, `di_end` = :di_end,
                       `mi_start` = :mi_start, `mi_end` = :mi_end, `do_start` = :do_start, `do_end` = :do_end, 
                       `fr_start` = :fr_start, `fr_end` = :fr_end,`sa_start` = :sa_start, `sa_end` = :sa_end,
-                      `so_start` = :so_start, `so_end` = :so_end,
-                      WHERE `opening_hours`.`id` = 1');
+                      `so_start` = :so_start, `so_end` = :so_end
+                      WHERE `id` = 1');
     $this->db->bind(':mo_start', $data['mo_start']);
     $this->db->bind(':mo_end', $data['mo_end']);
     $this->db->bind(':di_start', $data['di_start']);

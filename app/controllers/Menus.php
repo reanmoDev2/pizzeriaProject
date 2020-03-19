@@ -19,13 +19,113 @@ class Menus extends Controller
     $this->view('menus/index', $data, $results);
   }
 
-  public function show()
+  public function delete($id)
+  {
+    $menu = $this->menuModel->getMenuInformation($id);
+    if (!is_Null($menu->image)) {
+      $tmp = explode('/', $menu->image);
+      $image_name = end($tmp);
+      $target_dir = dirname(APPROOT) . "\public\storage\\" . $id . "\\";
+      $target_file = $target_dir . $image_name;
+
+      if (unlink($target_file)) {
+      } else {
+        die('failed to delete File');
+      }
+      if (rmdir($target_dir)) {
+      } else {
+        die('failed to delete Directory');
+      }
+    }
+
+    $this->menuModel->deleteById($id);
+
+    return redirect('menus/index');
+  }
+
+  public function edit($id)
   {
     $data = [
       'activeSide' => 'menu',
-      'selectedItem' => '1' //trim($_POST['id'])
     ];
-    $this->view('menus/show', $data);
+    $menu = $this->menuModel->getMenuInformation($id);
+    $this->view('menus/edit', $data, $menu);
+  }
+
+  public function update($id)
+  {
+    $data = [
+      'id' => $id,
+      'name' => '',
+      'name_err' => '',
+      'course' => '',
+      'course_err' => '',
+      'price_small' => '',
+      'price_medium' => '',
+      'price_large' => '',
+      'description' => '',
+      'img' => '',
+      'img_err' => '',
+    ];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+      $data['name'] =  trim($_POST['name']);
+      $data['course'] =  trim($_POST['mealCategory']);
+      $data['price_small'] =  trim($_POST['price1']);
+      $data['price_medium'] =  trim($_POST['price2']);
+      $data['price_large'] =  trim($_POST['price3']);
+      $data['description'] =  trim($_POST['comment']);
+
+      $validateInputs = $this->validateInputsOnUpdate($data);
+
+      $statusInputs = $validateInputs["status"];
+      $data = $validateInputs["data"];
+
+      $validateImg = $this->validateImg($data);
+
+      $statusImg = $validateImg['status'];
+      $data = $validateImg['data'];
+
+      if ($statusInputs) {
+        if ($statusImg) {
+          if ($this->updateIntoDB($data)) {
+            if ($_FILES['uploadImg']['size'] === 0) {
+              return redirect('menus/index');
+            }
+            $target_dir = dirname(APPROOT) . "\public\storage\\" . $data['id'] . "\\";
+            $target_url = URLROOT . "/public/storage/" . $data['id'] . "/" . basename($_FILES["uploadImg"]["name"]);
+            $target_file = $target_dir . basename($_FILES["uploadImg"]["name"]);
+            if ($this->uploadFile($target_file, $target_dir)) {
+              if ($this->updateImgInDB($data, $target_url, $data['id'])) {
+                return redirect('menus/index');
+              } else {
+                return redirect('menus/edit/' . $id);
+              }
+            } else {
+              return redirect('menus/edit/' . $id);
+            }
+          } else {
+            return redirect('menus/edit/' . $id);
+          }
+        } else {
+          return redirect('menus/edit/' . $id);
+        }
+      } else {
+        return redirect('menus/edit/' . $id);
+      }
+    } else {
+      return redirect('menus/index');
+    }
+  }
+
+  private function updateIntoDB($data)
+  {
+    if ($this->menuModel->updateMeal($data)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public function create()
@@ -68,12 +168,16 @@ class Menus extends Controller
       if ($statusName) {
         if ($statusImg) {
           if ($this->insertIntoDB($data)) {
-            $target_dir = dirname(APPROOT) . "\public\storage\\" . $this->menuModel->db->getLastId() . "\\";
-            $target_url = URLROOT . "/public/storage/" . $this->menuModel->db->getLastId() . "/" . basename($_FILES["uploadImg"]["name"]);
+            if ($_FILES['uploadImg']['size'] === 0) {
+              return redirect('menus/index');
+            }
+            $id = $this->menuModel->db->getLastId();
+            $target_dir = dirname(APPROOT) . "\public\storage\\" . $id . "\\";
+            $target_url = URLROOT . "/public/storage/" . $id . "/" . basename($_FILES["uploadImg"]["name"]);
             $target_file = $target_dir . basename($_FILES["uploadImg"]["name"]);
             if ($this->uploadFile($target_file, $target_dir)) {
-              if ($this->updateImgInDB($data, $target_url)) {
-                redirect('menus/index');
+              if ($this->updateImgInDB($data, $target_url, $id)) {
+                return redirect('menus/index');
               } else {
                 $this->view('menus/create', $data);
               }
@@ -146,6 +250,23 @@ class Menus extends Controller
     }
   }
 
+  private function validateInputsOnUpdate($data)
+  {
+    if (empty($data['name'])) {
+      $data['name_err'] = 'Bitte geben Sie den Namen des Gerichts ein. ';
+    }
+
+    if (empty($data['course'])) {
+      $data['course_err'] = 'Bitte treffen Sie eine Auswahl. ';
+    }
+
+    if (empty($data['name_err']) && empty($data['course_err'])) {
+      return ["status" => true, "data" => $data];
+    } else {
+      return ["status" => false, "data" => $data];
+    }
+  }
+
   private function insertIntoDB($data)
   {
     if ($this->menuModel->insertMeal($data)) {
@@ -163,14 +284,15 @@ class Menus extends Controller
     if (move_uploaded_file($_FILES["uploadImg"]["tmp_name"], $target_file)) {
       return true;
     } else {
+
       return false;
     }
   }
 
-  private function updateImgInDB($data, $target_url)
+  private function updateImgInDB($data, $target_url, $id)
   {
     $data['img'] = $target_url;
-    if ($this->menuModel->updateImage($data['img'])) {
+    if ($this->menuModel->updateImage($data['img'], $id)) {
       return true;
     } else {
       return false;

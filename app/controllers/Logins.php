@@ -25,7 +25,6 @@ class Logins extends Controller
                 echo ($e->getTraceAsString());
             }
 
-
             if (empty($data['email'])) {
                 $data['email_err'] = 'Bitte geben Sie eine E-Mail Adresse ein';
             } else {
@@ -43,7 +42,6 @@ class Logins extends Controller
 
             if (empty($data['email_err'])  && empty($data['password_err'])) {
                 $loggedInUser = $this->userModel->login($data['email'], $data['password']);
-
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {

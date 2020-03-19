@@ -47,6 +47,8 @@ class Settings extends Controller
       redirect('settings/index');
     }
   }
+
+  // TODO validation and password confirm
   public function updateUser()
   {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -57,6 +59,7 @@ class Settings extends Controller
         'last_name' => $_POST['last_name'],
         'password' => $_POST['password'],
       ];
+      $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
       if ($this->settingModel->setUserCredentials($data)) {
         redirect('settings/index');
       } else {

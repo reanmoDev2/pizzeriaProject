@@ -51,8 +51,8 @@
                   </svg>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                  <a href="<?php echo URLROOT; ?>/menus/show" class="dropdown-item">Bearbeiten</a>
-                  <a href="#" class="dropdown-item">Löschen</a>
+                  <a href="<?php echo URLROOT; ?>/menus/edit/<?php echo $result->id; ?>" class="dropdown-item">Bearbeiten</a>
+                  <a href="<?php echo URLROOT; ?>/menus/delete/<?php echo $result->id; ?>" class="dropdown-item">Löschen</a>
                 </div>
               </div>
             </td>
