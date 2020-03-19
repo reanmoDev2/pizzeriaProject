@@ -8,30 +8,12 @@
     <div class="sales-container">
       <h3 class="dashboard">Umsatz</h3>
       <ol class="list-unstyled">
-        <li class="list-item">
-          <div class="price">2.553,90€</div>
-          <div class="name">Pizza Magherita</div>
-        </li>
-        <li class="list-item">
-          <div class="price">1.504,80€</div>
-          <div class="name">Pizza Salami</div>
-        </li>
-        <li class="list-item">
-          <div class="price">701,60€</div>
-          <div class="name">Salat Mista</div>
-        </li>
-        <li class="list-item">
-          <div class="price">130,50€</div>
-          <div class="name">Pizza Brötchen</div>
-        </li>
-        <li class="list-item">
-          <div class="price">10,80€</div>
-          <div class="name">Spaghetti</div>
-        </li>
-        <li class="list-item">
-          <div class="price">6,80€</div>
-          <div class="name">Sonstiges</div>
-        </li>
+        <?php foreach ($results['sales'] as $result) {; ?>
+          <li class="list-item">
+            <div class="price"><?php echo ($result->sales <= 0) ? '-' : number_format($result->sales, 2, ',', '.') . ' €'; ?></div>
+            <div class="name"><?php echo $result->name; ?></div>
+          </li>
+        <?php }; ?>
       </ol>
       <div class="chart-container">
         <div class="chart"></div>
@@ -56,26 +38,12 @@
       </div>
 
       <ol id="salesList" class="list-unstyled">
-        <li class="list-item">
-          <div class="price">2.553,90€</div>
-          <div class="name">Pizza Magherita</div>
-        </li>
-        <li class="list-item">
-          <div class="price">1.504,80€</div>
-          <div class="name">Pizza Salami</div>
-        </li>
-        <li class="list-item active">
-          <div class="price">701,60€</div>
-          <div class="name">Salat Mista</div>
-        </li>
-        <li class="list-item">
-          <div class="price">130,50€</div>
-          <div class="name">Pizza Brötchen</div>
-        </li>
-        <li class="list-item">
-          <div class="price">10,80€</div>
-          <div class="name">Spaghetti</div>
-        </li>
+        <?php foreach ($results['sold'] as $result) {; ?>
+          <li class="list-item">
+            <div class="price"><?php echo ($result->sales <= 0) ? '-' : number_format($result->sales, 2, ',', '.') . ' €'; ?></div>
+            <div class="name"><?php echo $result->name; ?></div>
+          </li>
+        <?php }; ?>
       </ol>
       <div class="btn-container">
         <button class="btn active">1</button>

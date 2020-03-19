@@ -5,7 +5,7 @@ class Menus extends Controller
   {
     if (isset($_SESSION['user_id'])) {
     } else {
-      redirect('logins/index');
+      return redirect('logins/index');
     }
     $this->menuModel = $this->model('Menu');
   }
@@ -22,23 +22,25 @@ class Menus extends Controller
   public function delete($id)
   {
     $menu = $this->menuModel->getMenuInformation($id);
-    if (!is_Null($menu->image)) {
-      $tmp = explode('/', $menu->image);
-      $image_name = end($tmp);
-      $target_dir = dirname(APPROOT) . "\public\storage\\" . $id . "\\";
-      $target_file = $target_dir . $image_name;
+    if ($this->menuModel->deleteById($id)) {
+      if (!is_Null($menu->image)) {
+        $tmp = explode('/', $menu->image);
+        $image_name = end($tmp);
+        $target_dir = dirname(APPROOT) . "\public\storage\\" . $id . "\\";
+        $target_file = $target_dir . $image_name;
 
-      if (unlink($target_file)) {
-      } else {
-        die('failed to delete File');
-      }
-      if (rmdir($target_dir)) {
-      } else {
-        die('failed to delete Directory');
+        if (unlink($target_file)) {
+        } else {
+          die('failed to delete File');
+        }
+        if (rmdir($target_dir)) {
+        } else {
+          die('failed to delete Directory');
+        }
       }
     }
 
-    $this->menuModel->deleteById($id);
+
 
     return redirect('menus/index');
   }

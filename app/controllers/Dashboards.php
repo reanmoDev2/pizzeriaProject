@@ -5,16 +5,21 @@ class Dashboards extends Controller
   {
     if (isset($_SESSION['user_id'])) {
     } else {
-      redirect('logins/index');
+      return redirect('logins/index');
     }
+    $this->dashboardModel = $this->model('Dashboard');
   }
 
   public function index()
   {
     $data = [
-      'activeSide' => 'dashboard'
+      'activeSide' => 'dashboard',
+      'orderDirection' => 'DESC',
     ];
-
-    $this->view('dashboards/index', $data);
+    $results = [
+      'sales' => $this->dashboardModel->getSales(),
+      'sold' => $this->dashboardModel->getSold($data['orderDirection'])
+    ];
+    $this->view('dashboards/index', $data, $results);
   }
 }

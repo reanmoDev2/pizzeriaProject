@@ -89,13 +89,14 @@ class Menu
                           meals.image,
                           meals.name,
                           meals.course,
-                          finance.sold,
+                          COUNT(orders.id) AS sold,
                           meals.price_small,
                           meals.price_medium,
                           meals.price_large
                       FROM
-                          `meals`
-                      LEFT JOIN `finance` ON meals.id = finance.meal_id');
+                          `orders`
+                      RIGHT JOIN `meals` ON orders.meals_id = meals.id
+                      GROUP BY meals.id');
     $results = $this->db->resultSet();
     return $results;
   }
