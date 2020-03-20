@@ -23,7 +23,8 @@ class Dashboards extends Controller
     ];
     $results = [
       'sales' => $this->dashboardModel->getSales(),
-      'sold' => $this->dashboardModel->getSold($data['setDirection'])
+      'sold' => $this->dashboardModel->getSold($data['setDirection']),
+      'chart' => $this->dashboardModel->getChartData()
     ];
     $this->view('dashboards/index', $data, $results);
   }

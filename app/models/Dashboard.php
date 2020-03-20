@@ -31,4 +31,24 @@ class Dashboard
     $results = $this->db->resultSet();
     return $results;
   }
+
+  public function getChartData()
+  {
+    $this->db->query('SELECT
+                          SUM(sales) AS sales
+                      FROM
+                          `orders`
+                      WHERE
+                          YEAR(ordered_at) = 2020
+                      GROUP BY
+                          MONTH(ordered_at)
+                      ORDER BY
+                          Month(ordered_at) ASC');
+    $results = $this->db->resultSet();
+    $final = [];
+    foreach ($results as $result) {
+      array_push($final, floatval($result->sales));
+    }
+    return $final;
+  }
 }

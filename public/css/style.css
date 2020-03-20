@@ -124,9 +124,8 @@ body {
         flex-direction: row;
         margin-top: auto; }
         .content-container .inner-container .sales-container .chart-container .chart {
-          border: 1px solid black;
-          width: 405px;
-          height: 272px;
+          max-width: 400px;
+          max-height: 275px;
           margin-top: auto;
           margin-left: 24px;
           margin-bottom: 42px; }
