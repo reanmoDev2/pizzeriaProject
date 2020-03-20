@@ -1,3 +1,4 @@
+// Preview Img -> menu
 function readURL(input) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
@@ -9,11 +10,11 @@ function readURL(input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
-
 $('#uploadImg').change(function() {
   readURL(this);
 });
 
+// Filter menu(Search Bar)
 function searchMenu() {
   // Declare variables
   var input, filter, table, tr, td, i, txtValue;
@@ -34,4 +35,30 @@ function searchMenu() {
       }
     }
   }
+}
+
+// show only a part of the hole list
+function showListItems(start, end) {
+  $(this).toggleClass('active');
+  $('.sold-list-item').css('display', 'none');
+  for (var i = start; i < end; i++) {
+    $('.sold-list-item')
+      .eq(i)
+      .css('display', 'flex');
+  }
+}
+showListItems(0, 4);
+
+// Get the container element
+var btnContainer = document.getElementById('btnContainer');
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName('btn');
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener('click', function() {
+    btns[0].className = btns[0].className.replace(' active', '');
+    this.className += ' active';
+  });
 }

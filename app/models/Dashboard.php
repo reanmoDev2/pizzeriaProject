@@ -27,7 +27,7 @@ class Dashboard
                       RIGHT JOIN meals ON meals.id = orders.meals_id
                       GROUP BY
                           meals.name  
-                      ORDER BY `amount` ' . $order);
+                      ORDER BY `amount` ' . $order . ', sales ' . $order);
     $results = $this->db->resultSet();
     return $results;
   }

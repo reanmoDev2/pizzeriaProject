@@ -12,13 +12,18 @@ class Dashboards extends Controller
 
   public function index()
   {
+    if (empty($_POST['orderDirection'])) {
+      $direction = 'DESC';
+    } else {
+      $direction = $_POST['orderDirection'];
+    }
     $data = [
       'activeSide' => 'dashboard',
-      'orderDirection' => 'DESC',
+      'setDirection' => $direction,
     ];
     $results = [
       'sales' => $this->dashboardModel->getSales(),
-      'sold' => $this->dashboardModel->getSold($data['orderDirection'])
+      'sold' => $this->dashboardModel->getSold($data['setDirection'])
     ];
     $this->view('dashboards/index', $data, $results);
   }
