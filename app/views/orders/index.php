@@ -46,65 +46,47 @@
   </div>
   <div class="order-in-progress-container">
     <h3>In Bearbeitung</h3>
-    <div class="order in-progress">
-      <div class="new-line">
-        <div class="pic-container">
-          <img class="pizza-pic" src="<?php echo URLROOT; ?>/img/pizza_margherita.png" alt="">
+    <?php foreach ($results as $order) {; ?>
+      <?php foreach ($order as $key => $item) {; ?>
+        <div class="order in-progress">
+          <?php if ($key === 0) : ?>
+            <div class="new-line">
+              <div class="pic-container">
+                <img class="pizza-pic" src="<?php echo $item->image; ?>" alt="">
+              </div>
+              <div class="description">
+                <div class="product-name"><?php echo $item->meals_name; ?></div>
+                <div class="price"><?php echo ($item->sales <= 0) ? '-' : number_format($item->sales, 2, ',', '.') . ' €'; ?></div>
+              </div>
+              <div class="customer">
+                <div class="name"><?php echo $item->customers_name; ?></div>
+                <div class="number"><?php echo $item->tel_nr; ?></div>
+              </div>
+              <div class="btn-container">
+                <a href="#" class="btn btn-danger mr-5">STORNIEREN</a>
+                <a href="#" class="btn btn-success">BEZAHLT</a>
+              </div>
+              <div class="delivery">
+                <i class="far fa-clock"></i>
+                <div class="delivery-time">18:45 Uhr</div>
+                <div class="timer">Noch 10 Minuten</div>
+              </div>
+            </div>
+          <?php else : ?>
+            <div class="new-line">
+              <div class="pic-container">
+                <img class="pizza-pic" src="<?php echo $item->image; ?>" alt="">
+              </div>
+              <div class="description">
+                <div class="product-name"><?php echo $item->meals_name; ?></div>
+                <div class="price"><?php echo ($item->sales <= 0) ? '-' : number_format($item->sales, 2, ',', '.') . ' €'; ?></div>
+              </div>
+            </div>
+          <?php endif; ?>
         </div>
-        <div class="description">
-          <div class="product-name">1x Pizza Margherita Gouda (medium)</div>
-          <div class="price">10,50€</div>
-        </div>
-        <div class="customer">
-          <div class="name">Peter Schlüß</div>
-          <div class="number">02871 2372427</div>
-        </div>
-        <div class="btn-container">
-          <a href="#" class="btn btn-danger mr-5">STORNIEREN</a>
-          <a href="#" class="btn btn-success">BEZAHLT</a>
-        </div>
-        <div class="delivery">
-          <i class="far fa-clock"></i>
-          <div class="delivery-time">18:45 Uhr</div>
-          <div class="timer">Noch 10 Minuten</div>
-        </div>
-      </div>
+      <?php } ?>
       <div class="border-bottom border-lightgrey"></div>
-    </div>
-    <div class="order in-progress">
-      <div class="new-line">
-        <div class="pic-container">
-          <img class="pizza-pic" src="<?php echo URLROOT; ?>/img/pizza_margherita.png" alt="">
-        </div>
-        <div class="description">
-          <div class="product-name">1x Pizza Margherita Gouda (medium)</div>
-          <div class="price">10,50€</div>
-        </div>
-        <div class="customer">
-          <div class="name">Günther Schlüß</div>
-          <div class="number">02871 2372427</div>
-        </div>
-        <div class="btn-container">
-          <a href="#" class="btn btn-danger mr-5">STORNIEREN</a>
-          <a href="#" class="btn btn-success">BEZAHLT</a>
-        </div>
-        <div class="delivery">
-          <i class="far fa-clock"></i>
-          <div class="delivery-time">18:50 Uhr</div>
-          <div class="timer">Noch 15 Minuten</div>
-        </div>
-      </div>
-      <div class="new-line">
-        <div class="pic-container">
-          <img class="bruschetta-pic" src="<?php echo URLROOT; ?>/img/bruschetta.png" alt="">
-        </div>
-        <div class="description">
-          <div class="product-name">1x Bruschetta</div>
-          <div class="price">4,50€</div>
-        </div>
-      </div>
-      <div class="border-bottom border-lightgrey"></div>
-    </div>
+    <?php } ?>
   </div>
 </div>
 

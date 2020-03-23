@@ -7,12 +7,25 @@ class Orders extends Controller
     } else {
       return redirect('logins/index');
     }
+    $this->orderModel = $this->model('Order');
   }
   public function index()
   {
     $data = [
       'activeSide' => 'orders'
     ];
-    $this->view('orders/index', $data);
+
+    $results = $this->displayAllOrdersInProgress();
+    $this->view('orders/index', $data, $results);
+  }
+
+  public function displayAllOrdersInProgress()
+  {
+    $dbResponse = $this->orderModel->getAllOrdersInProgress();
+    $sortedResults = [];
+    foreach ($dbResponse as $row) {
+      $sortedResults[$row->id][] = $row;
+    }
+    return $sortedResults;
   }
 }

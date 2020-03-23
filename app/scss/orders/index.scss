@@ -31,6 +31,7 @@
     }
     .description {
       margin-left: 10px;
+      min-width: 240px;
       .product-name {
         font-size: 18px;
         font-weight: 600;
@@ -43,7 +44,7 @@
       }
     }
     .customer {
-      margin-left: 57px;
+      margin-left: 37px;
       font-size: 18;
       font-weight: 400;
       color: #1a1a1a;

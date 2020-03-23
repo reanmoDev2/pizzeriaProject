@@ -4,7 +4,7 @@ class Logins extends Controller
     public function __construct()
     {
         if (isset($_SESSION['user_id'])) {
-            redirect('dashboards/index');
+            return redirect('dashboards/index');
         }
         $this->userModel = $this->model('User');
     }

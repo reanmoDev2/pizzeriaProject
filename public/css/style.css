@@ -358,7 +358,8 @@ form {
         width: 144px;
         height: 72px; }
     .order .new-line .description {
-      margin-left: 10px; }
+      margin-left: 10px;
+      min-width: 240px; }
       .order .new-line .description .product-name {
         font-size: 18px;
         font-weight: 600;
@@ -368,7 +369,7 @@ form {
         font-weight: 600;
         color: #585858; }
     .order .new-line .customer {
-      margin-left: 57px;
+      margin-left: 37px;
       font-size: 18;
       font-weight: 400;
       color: #1a1a1a; }
