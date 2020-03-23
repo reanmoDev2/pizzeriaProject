@@ -28,7 +28,9 @@ class Orders extends Controller
     }
     return $sortedResults;
   }
-  public function cancelOrder($orderId)
+  public function cancelOrder()
   {
+    $id = $_GET['order'];
+    $this->orderModel->cancelOrderById($id);
   }
 }

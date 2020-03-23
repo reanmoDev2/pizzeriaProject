@@ -28,4 +28,33 @@ class Order
                           orders_customers.status = 'In Bearbeitung'");
     return $this->db->resultSet();
   }
+
+  // update orders_customers (status)
+  public function updateStatusById($orderId)
+  {
+    $this->db->query('UPDATE `orders_customers` SET `status` = "Storniert" WHERE `orders_customers`.`id` = :id;');
+    $this->db->bind(':id', $orderId);
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // delete entry from orders_meals
+  public function deleteOrderByID($orderId)
+  {
+    $this->db->query('DELETE FROM `orders_meals` WHERE `orders_customers_id`= :id');
+    $this->db->bind(':id', $orderId);
+    if ($this->db->execute())
+      return true;
+    else
+      return false;
+  }
+
+  public function cancelOrderByID($orderId)
+  {
+    $this->updateStatusById($orderId);
+    //$this->deleteOrderByID($orderId);
+  }
 }

@@ -46,47 +46,50 @@
   </div>
   <div class="order-in-progress-container">
     <h3>In Bearbeitung</h3>
-    <?php foreach ($results as $order) {; ?>
-      <?php foreach ($order as $key => $item) {; ?>
-        <div class="order in-progress">
-          <?php if ($key === 0) : ?>
-            <div class="new-line">
-              <div class="pic-container">
-                <img class="pizza-pic" src="<?php echo $item->image; ?>" alt="">
+    <?php foreach ($results as $index => $order) {; ?>
+      <div id="order-<?php echo $index ?>">
+        <?php foreach ($order as $key => $item) {; ?>
+          <div class="order in-progress">
+            <?php if ($key === 0) : ?>
+              <div class="new-line">
+                <div class="pic-container">
+                  <img class="pizza-pic" src="<?php echo $item->image; ?>" alt="">
+                </div>
+                <div class="description">
+                  <div class="product-name"><?php echo $item->meals_name; ?></div>
+                  <div class="price"><?php echo ($item->sales <= 0) ? '-' : number_format($item->sales, 2, ',', '.') . ' €'; ?></div>
+                </div>
+                <div class="customer">
+                  <div class="name"><?php echo $item->customers_name; ?></div>
+                  <div class="number"><?php echo $item->tel_nr; ?></div>
+                </div>
+                <div class="btn-container">
+                  <a id="cancelBtn" data-id="<?php echo $item->id; ?>" href="#" class="btn btn-danger mr-5">STORNIEREN</a>
+                  <a href="#" class="btn btn-success">BEZAHLT</a>
+                </div>
+                <div class="delivery">
+                  <i class="far fa-clock"></i>
+                  <div class="delivery-time">18:45 Uhr</div>
+                  <div class="timer">Noch 10 Minuten</div>
+                </div>
               </div>
-              <div class="description">
-                <div class="product-name"><?php echo $item->meals_name; ?></div>
-                <div class="price"><?php echo ($item->sales <= 0) ? '-' : number_format($item->sales, 2, ',', '.') . ' €'; ?></div>
+            <?php else : ?>
+              <div class="new-line">
+                <div class="pic-container">
+                  <img class="pizza-pic" src="<?php echo $item->image; ?>" alt="">
+                </div>
+                <div class="description">
+                  <div class="product-name"><?php echo $item->meals_name; ?></div>
+                  <div class="price"><?php echo ($item->sales <= 0) ? '-' : number_format($item->sales, 2, ',', '.') . ' €'; ?></div>
+                </div>
               </div>
-              <div class="customer">
-                <div class="name"><?php echo $item->customers_name; ?></div>
-                <div class="number"><?php echo $item->tel_nr; ?></div>
-              </div>
-              <div class="btn-container">
-                <a href="#" class="btn btn-danger mr-5">STORNIEREN</a>
-                <a href="#" class="btn btn-success">BEZAHLT</a>
-              </div>
-              <div class="delivery">
-                <i class="far fa-clock"></i>
-                <div class="delivery-time">18:45 Uhr</div>
-                <div class="timer">Noch 10 Minuten</div>
-              </div>
-            </div>
-          <?php else : ?>
-            <div class="new-line">
-              <div class="pic-container">
-                <img class="pizza-pic" src="<?php echo $item->image; ?>" alt="">
-              </div>
-              <div class="description">
-                <div class="product-name"><?php echo $item->meals_name; ?></div>
-                <div class="price"><?php echo ($item->sales <= 0) ? '-' : number_format($item->sales, 2, ',', '.') . ' €'; ?></div>
-              </div>
-            </div>
-          <?php endif; ?>
-        </div>
-      <?php } ?>
-      <div class="border-bottom border-lightgrey"></div>
-    <?php } ?>
+            <?php endif; ?>
+          </div>
+        <?php } ?>
+        <div class="border-bottom border-lightgrey"></div>
+      </div>
+    <?php
+    } ?>
   </div>
 </div>
 
