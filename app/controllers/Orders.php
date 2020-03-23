@@ -28,4 +28,7 @@ class Orders extends Controller
     }
     return $sortedResults;
   }
+  public function cancelOrder($orderId)
+  {
+  }
 }
