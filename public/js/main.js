@@ -39,7 +39,6 @@ function searchMenu() {
 
 // show only a part of the hole list
 function showListItems(start, end) {
-  $(this).toggleClass('active');
   $('.sold-list-item').css('display', 'none');
   for (var i = start; i < end; i++) {
     $('.sold-list-item')
@@ -49,16 +48,39 @@ function showListItems(start, end) {
 }
 showListItems(0, 4);
 
-// Get the container element
-var btnContainer = document.getElementById('btnContainer');
+$('#page1').on('click', function() {
+  $('#page1').addClass('active');
+  $('#page2').removeClass('active');
+  showListItems(0, 4);
+});
+$('#page2').on('click', function() {
+  $('#page2').addClass('active');
+  $('#page1').removeClass('active');
+  showListItems(4, 8);
+});
 
-// Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByClassName('btn');
-
-// Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener('click', function() {
-    btns[0].className = btns[0].className.replace(' active', '');
-    this.className += ' active';
-  });
+function orderDirection(direction) {
+  fetch(
+    `http://localhost/pizzeriaProject/dashboards/getSoldByOrder?order=${direction}`
+  )
+    .then(res => res.json())
+    .then(data => {
+      data.forEach((element, index) => {
+        const price = document.getElementById('soldPrice-' + index);
+        price.innerHTML = formatFloatToCurrency(element.sales);
+        const name = document.getElementById('soldName-' + index);
+        name.innerHTML = element.name + ' (' + element.amount + ') ';
+      });
+    });
 }
+
+$('#descBtn').on('click', function() {
+  $('#descBtn').addClass('active');
+  $('#ascBtn').removeClass('active');
+  orderDirection('DESC');
+});
+$('#ascBtn').on('click', function() {
+  $('#ascBtn').addClass('active');
+  $('#descBtn').removeClass('active');
+  orderDirection('ASC');
+});

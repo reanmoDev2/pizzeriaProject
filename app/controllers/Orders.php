@@ -5,7 +5,7 @@ class Orders extends Controller
   {
     if (isset($_SESSION['user_id'])) {
     } else {
-      redirect('logins/index');
+      return redirect('logins/index');
     }
   }
   public function index()

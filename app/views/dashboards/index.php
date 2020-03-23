@@ -32,8 +32,12 @@
         <script type="text/javascript">
           function formatFloatToCurrency(float) {
             float = float.toString();
+            if (!float.includes('.')) {
+              float = float.concat('.00');
+            }
             var substrings = float.split('.');
             substrings[1] = substrings[1].padEnd(2, '0');
+
             if (substrings[0].length > 3) {
               tmp = substrings[0].slice(-3)
               substrings[0] = substrings[0].slice(0, -3) + tmp.padStart(4, '.');
@@ -161,30 +165,24 @@
         </div>
 
         <div class="sort-container">
-          <form action="<?php echo URLROOT; ?>/dashboards/index" method="post" class="d-flex">
-            <label for="desc">
-              <h4 class="<?php echo ($data['setDirection'] === 'DESC') ? 'active' : ''; ?>">Absteigend</h4>
-            </label>
-            <input id="desc" type="submit" name="orderDirection" value="" hidden>
-            <label for="asc">
-              <h4 class="<?php echo ($data['setDirection'] === 'ASC') ? 'active' : ''; ?>">Aufsteigend</h4>
-            </label>
-            <input id="asc" type="submit" name="orderDirection" value="ASC" hidden>
-          </form>
+          <h4 id="descBtn" class="active">Absteigend</h4>
+          <h4 id="ascBtn" class="">Aufsteigend</h4>
         </div>
       </div>
 
       <ol id="soldList" class="list-unstyled">
+        <?php $index = 0 ?>
         <?php foreach ($results['sold'] as $result) {; ?>
           <li class="list-item sold-list-item" id="soldListItem">
-            <div class="price"><?php echo ($result->sales <= 0) ? '-' : number_format($result->sales, 2, ',', '.') . ' €'; ?></div>
-            <div class="name"><?php echo $result->name . ' (' . $result->amount . ')'; ?></div>
+            <div id="soldPrice-<?php echo $index  ?>" class="price"><?php echo ($result->sales <= 0) ? '-' : number_format($result->sales, 2, ',', '.') . ' €'; ?></div>
+            <div id="soldName-<?php echo $index  ?>" class="name"><?php echo $result->name . ' (' . $result->amount . ')'; ?></div>
           </li>
-        <?php }; ?>
+        <?php $index++;
+        }; ?>
       </ol>
       <div class="btn-container" id="btnContainer">
-        <button onclick="showListItems(0,4)" class="btn active">1</button>
-        <button onclick="showListItems(4,8)" class="btn ">2</button>
+        <button id="page1" class="btn active">1</button>
+        <button id="page2" class="btn">2</button>
       </div>
 
     </div>

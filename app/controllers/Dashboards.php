@@ -28,4 +28,10 @@ class Dashboards extends Controller
     ];
     $this->view('dashboards/index', $data, $results);
   }
+
+  public function getSoldByOrder()
+  {
+    $direction = $_GET['order'];
+    echo json_encode($this->dashboardModel->getSold($direction));
+  }
 }
