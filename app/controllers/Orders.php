@@ -15,13 +15,26 @@ class Orders extends Controller
       'activeSide' => 'orders'
     ];
 
-    $results = $this->displayAllOrdersInProgress();
+    $results = [
+      'inProgress' => $this->displayAllOrdersInProgress(),
+      'new' => $this->displayAllOrdersNew(),
+    ];
     $this->view('orders/index', $data, $results);
   }
 
   public function displayAllOrdersInProgress()
   {
     $dbResponse = $this->orderModel->getAllOrdersInProgress();
+    $sortedResults = [];
+    foreach ($dbResponse as $row) {
+      $sortedResults[$row->id][] = $row;
+    }
+    return $sortedResults;
+  }
+
+  public function displayAllOrdersNew()
+  {
+    $dbResponse = $this->orderModel->getAllOrdersNew();
     $sortedResults = [];
     foreach ($dbResponse as $row) {
       $sortedResults[$row->id][] = $row;
@@ -39,5 +52,11 @@ class Orders extends Controller
   {
     $id = $_GET['order'];
     $this->orderModel->payOrderById($id);
+  }
+
+  public function denyOrder()
+  {
+    $id = $_GET['order'];
+    $this->orderModel->denyOrderById($id);
   }
 }

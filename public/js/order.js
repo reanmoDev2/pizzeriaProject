@@ -19,3 +19,14 @@ $('#payBtn').on('click', function() {
   const id = $(this).data('id');
   payOrder(id);
 });
+
+function denyOrder(orderId) {
+  fetch(`http://localhost/pizzeriaProject/orders/denyOrder?order=${orderId}`);
+
+  $('#order-' + orderId).html('');
+}
+
+$('#denyBtn').on('click', function() {
+  const id = $(this).data('id');
+  denyOrder(id);
+});
