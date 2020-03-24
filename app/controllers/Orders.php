@@ -28,9 +28,16 @@ class Orders extends Controller
     }
     return $sortedResults;
   }
+
   public function cancelOrder()
   {
     $id = $_GET['order'];
     $this->orderModel->cancelOrderById($id);
+  }
+
+  public function payOrder()
+  {
+    $id = $_GET['order'];
+    $this->orderModel->payOrderById($id);
   }
 }

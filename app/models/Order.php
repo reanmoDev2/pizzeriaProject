@@ -25,14 +25,17 @@ class Order
                       LEFT JOIN meals ON orders_meals.meals_id = meals.id
                       LEFT JOIN customers ON orders_customers.customers_id = customers.id
                       WHERE
-                          orders_customers.status = 'In Bearbeitung'");
+                          orders_customers.status = 'In Bearbeitung'
+                      ORDER BY
+                          orders_customers.ordered_at ASC");
     return $this->db->resultSet();
   }
 
   // update orders_customers (status)
-  public function updateStatusById($orderId)
+  public function updateStatusById($orderId, $status)
   {
-    $this->db->query('UPDATE `orders_customers` SET `status` = "Storniert" WHERE `orders_customers`.`id` = :id;');
+    $this->db->query('UPDATE `orders_customers` SET `status` = :status WHERE `orders_customers`.`id` = :id;');
+    $this->db->bind(':status', $status);
     $this->db->bind(':id', $orderId);
     if ($this->db->execute()) {
       return true;
@@ -52,9 +55,14 @@ class Order
       return false;
   }
 
-  public function cancelOrderByID($orderId)
+  public function cancelOrderByID($orderId, $newStatus = 'Storniert')
   {
-    $this->updateStatusById($orderId);
-    //$this->deleteOrderByID($orderId);
+    $this->updateStatusById($orderId, $newStatus);
+    $this->deleteOrderByID($orderId);
+  }
+
+  public function payOrderByID($orderId, $newStatus = 'Bezahlt')
+  {
+    $this->updateStatusById($orderId, $newStatus);
   }
 }

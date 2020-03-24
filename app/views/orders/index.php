@@ -65,7 +65,7 @@
                 </div>
                 <div class="btn-container">
                   <a id="cancelBtn" data-id="<?php echo $item->id; ?>" href="#" class="btn btn-danger mr-5">STORNIEREN</a>
-                  <a href="#" class="btn btn-success">BEZAHLT</a>
+                  <a id="payBtn" data-id="<?php echo $item->id; ?>" href="#" class="btn btn-success">BEZAHLT</a>
                 </div>
                 <div class="delivery">
                   <i class="far fa-clock"></i>
